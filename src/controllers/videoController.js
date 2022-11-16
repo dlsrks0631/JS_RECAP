@@ -1,4 +1,13 @@
-export const trending = (req, res) => res.render("home", { pageTitle: "Home" });
+const fakeUser = {
+  username: "Nicolas",
+  loggedIn: false,
+};
+
+export const trending = (req, res) => {
+  const videos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  return res.render("home", { pageTitle: "Home", videos });
+};
+
 // render(파일명, 보내고자 하는 변수)
 export const see = (req, res) => res.render("watch");
 export const edit = (req, res) => res.render("edit");
