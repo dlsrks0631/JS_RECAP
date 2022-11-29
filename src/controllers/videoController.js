@@ -1,11 +1,10 @@
 const fakeUser = {
   username: "Nicolas",
-  loggedIn: false,
+  loggedIn: true,
 };
 
 export const trending = (req, res) => {
-  const videos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  return res.render("home", { pageTitle: "Home", videos });
+  res.render("home", { pageTitle: "Home", fakeUser });
 };
 
 // render(파일명, 보내고자 하는 변수)
