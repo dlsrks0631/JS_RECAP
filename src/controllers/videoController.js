@@ -30,10 +30,10 @@ export const trending = (req, res) => {
 };
 
 // render(파일명, 보내고자 하는 변수)
-export const see = (req, res) => {
+export const watch = (req, res) => {
   const { id } = req.params;
   const video = videos[id - 1];
-  res.render("watch", { pageTitle: `Watching ${video.title}` });
+  res.render("watch", { pageTitle: `Watching ${video.title}`, video });
 };
 export const edit = (req, res) => res.render("edit");
 export const search = (req, res) => res.send("Search");
