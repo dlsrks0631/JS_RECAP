@@ -3,6 +3,4 @@ extends base.pug
 
 block content 
     h3 #{video.views} #{video.views === 1 ? "view" : "views"}
-    a(href="/edit") Edit Video &rarr;
-
-localhost:4000/profile/edit-profile/password
+    a(href=`${video.id}/edit`) Edit Video &rarr;
