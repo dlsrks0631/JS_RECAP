@@ -53,6 +53,16 @@ export const getUpload = (req, res) => {
 };
 
 export const postUpload = (req, res) => {
-  // add a video to videos array
+  // req.body -> input에서 데이터를 받아오기 위해 사용
+  const { title } = req.body;
+  const newVideo= {
+    title,
+    rating: 0,
+    comments: 0,
+    createdAt: "just now",
+    views: 0,
+    id: videos.length + 1,
+  };
+  videos.push(newVideo);
   return res.redirect("/");
 };
