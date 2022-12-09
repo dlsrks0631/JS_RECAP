@@ -1,7 +1,9 @@
 extends base.pug
 
 block content 
-    form(method="POST", action="/videos/upload")
+    form(method="POST")
         //-input에 이름을 정해주지 않을 시 request.body에 아무것도 나타나지 않음
         input(placeholder="Title", required, type="text",name="title")
+        input(placeholder="Description", required, type="text",name="description")
+        input(placeholder="Hashtags, separated by comma.", required, type="text",name="hashtags")
         input(type="submit", value="Upload Video")
