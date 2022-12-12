@@ -32,16 +32,17 @@ export const getUpload = (req, res) => {
 export const postUpload = async (req, res) => {
   // req.body -> input에서 데이터를 받아오기 위해 사용
   const { title, description, hashtags } = req.body;
-  await Video.create({
+  try{
+    await Video.create({
     title,
     description,
-    createdAt: Date.now(),
     hashtags: hashtags.split(",").map(word=> `#${word}`),
-    meta: {
-      views:0, 
-      rating:0,
-    },
   });
-  
   return res.redirect("/");
+  } catch (error) {
+    return res.render("upload", {
+      pageTitle: "Upload Video",
+      errorMessage: error._message,
+    });
+  } 
 };

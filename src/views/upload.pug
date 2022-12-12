@@ -1,6 +1,8 @@
 extends base.pug
 
 block content 
+    if errorMessage
+        span=errorMessage
     form(method="POST")
         //-input에 이름을 정해주지 않을 시 request.body에 아무것도 나타나지 않음
         input(placeholder="Title", required, type="text",name="title")
